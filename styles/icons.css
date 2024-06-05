@@ -1,0 +1,16 @@
+.js-moves {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 50px;
+  width: 200px;
+  font-size: 32px;
+}
+
+.move-icon {
+  height: 50px;
+}
+
+.result-icon {
+  height: 100%;
+}

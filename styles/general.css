@@ -1,0 +1,30 @@
+body {
+  padding-top: 50px;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.moves-div {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.js-result {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
