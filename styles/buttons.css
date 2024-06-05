@@ -9,16 +9,18 @@
   margin-right: 25px;
 }
 
-.reset-button {
+.game-buttons {
   display: flex;
   justify-content: center;
 }
 
-.reset-button button {
+.game-buttons button {
   color: white;
   background-color: rgb(0, 116, 120);
   border: 2px, solid, white;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  margin-right: 5px;
+  margin-left: 5px;
 }
