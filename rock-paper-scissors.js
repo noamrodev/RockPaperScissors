@@ -41,8 +41,8 @@ function updateResults(result, myMove, computerMove) {
   updateScore();
 }
 
-// Function to simulate the computer's move and determine the result
-function pickComputerMove(myMove) {
+// Play player's move and determine the result with the computer's move
+function playGame(myMove) {
   const computerMove = moves[Math.floor(Math.random() * moves.length)];
 
   // Define outcomes for each move combination
@@ -82,9 +82,9 @@ function autoPlay() {
 
   if (isAutoPlay) {
     // Start auto-play interval
-    autoPlayInterval = setInterval(function () {
+    autoPlayInterval = setInterval(() => {
       const randomMove = moves[Math.floor(Math.random() * moves.length)];
-      pickComputerMove(randomMove);
+      playGame(randomMove);
     }, 1000);
 
     // Change auto-play button text to "Stop Auto Play"
@@ -105,6 +105,19 @@ function autoPlay() {
     moveButtons.forEach((button) => (button.style.opacity = 1));
   }
 }
+
+// Adds event listener for each of the moves
+moves.forEach((move) => {
+  document.querySelector(`.js-${move}-button`).addEventListener("click", () => {
+    playGame(move);
+  });
+});
+// Add event listener for keyboard shortcuts
+moves.forEach((move) => {
+  document.body.addEventListener("keydown", (event) => {
+    if (!isAutoPlay && event.key === move[0]) playGame(move);
+  });
+});
 
 // Call updateScore to display the initial score on page load
 updateScore();
